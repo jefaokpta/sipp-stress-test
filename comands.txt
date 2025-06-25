@@ -1,0 +1,3 @@
+
+
+sipp -sf register_scenario.xml -inf users.csv -r 455 -m 55000 remote-host:5060 -trace_err
