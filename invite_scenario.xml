@@ -21,7 +21,7 @@
 
 <scenario name="Basic INVITE UAC">
 
-    <send>
+    <send retrans="500">
         <![CDATA[
 
         INVITE sip:[field1]@[remote_ip]:[remote_port] SIP/2.0
@@ -54,7 +54,7 @@
 
     <!-- Packet lost can be simulated in any send/recv message by         -->
     <!-- by adding the 'lost = "10"'. Value can be [1-100] percent.       -->
-    <send>
+    <send retrans="500">
         <![CDATA[
 
         ACK sip:[field1]@[remote_ip]:[remote_port] SIP/2.0
@@ -71,7 +71,7 @@
         ]]>
     </send>
 
-    <send>
+    <send retrans="500">
         <![CDATA[
 
         INVITE sip:[field1]@[remote_ip]:[remote_port] SIP/2.0
@@ -113,7 +113,7 @@
     <recv response="200" rtd="true">
     </recv>
 
-    <send>
+    <send retrans="500">
         <![CDATA[
 
         ACK sip:[field1]@[remote_ip]:[remote_port] SIP/2.0
@@ -137,7 +137,7 @@
     <pause milliseconds="10000"/>
 
     <!-- The 'crlf' option inserts a blank line in the statistics report. -->
-    <send>
+    <send retrans="500">
         <![CDATA[
 
         BYE sip:[field1]@[remote_ip]:[remote_port] SIP/2.0
